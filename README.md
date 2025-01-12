@@ -22,7 +22,7 @@
 שכפלו את הפרויקט למחשב המקומי שלכם:
 ```bash
 git clone  https://github.com/shira4348/garages_frontend.git
-cd  https://github.com/shira4348/garages_frontend.git
+cd  garages_frontend
 ```
 
 ### **שלב 2: התקנת התלויות**
