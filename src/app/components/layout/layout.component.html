@@ -1,0 +1,28 @@
+<div class="layout">
+  <header class="header" *ngIf="isAuthenticated">
+    <div class="user-info">
+        <span class="user-name">מערכת מוסכים </span>
+    </div>
+
+    <div
+      *ngIf="isAuthenticated"
+      (click)="logout()"
+    >
+    <mat-icon class="avatar-icon">logout</mat-icon>
+
+      
+  </div>
+
+    <button
+    mat-raised-button      *ngIf="!isAuthenticated && currentRoute !== '/login'"
+      (click)="login()"
+    >
+      Login
+    </button>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

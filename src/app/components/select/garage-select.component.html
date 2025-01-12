@@ -1,0 +1,13 @@
+
+<div class="multi-select-container">
+  <mat-form-field appearance="fill">
+    <mat-label>בחר מוסכים</mat-label>
+    <mat-select [(ngModel)]="selectedGarages" multiple (selectionChange)="onSelectionChange()">
+      <mat-option *ngFor="let garage of garages" [value]="garage">
+        {{ garage.shem_mosah }} - {{ garage.yishuv }} - {{ garage.miktzoa }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>
+

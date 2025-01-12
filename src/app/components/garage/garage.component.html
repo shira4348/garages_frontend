@@ -1,0 +1,32 @@
+<div class="container">
+  <mat-card>
+    <mat-card-content>
+      <div class="selection-container">
+        <ng-container *ngIf="filteredGarages.length > 0; else try">
+          <app-garage-select
+            class="garage-select"
+            [garages]="filteredGarages"
+            (selectionChange)="updateSelectedGarages($event)"
+          ></app-garage-select>
+
+          <app-garage-button
+            (buttonClick)="saveSelectedGarages()"
+            class="garage-button"
+          ></app-garage-button>
+        </ng-container>
+        <ng-template #try>
+          <div class="emptygovermrntlist">לא נותרו מוסכים לבחירה</div>
+        </ng-template>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-content>
+      <app-garage-table
+        [garages]="appGarages"
+        (deleteGarage)="onDeleteGarage($event)"
+      ></app-garage-table>
+    </mat-card-content>
+  </mat-card>
+</div>

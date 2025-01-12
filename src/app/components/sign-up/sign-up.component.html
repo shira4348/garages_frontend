@@ -1,0 +1,47 @@
+<div class="sign-up-container">
+  <mat-card class="sign-up-card">
+    <mat-card-title>צור חשבון</mat-card-title>
+    <mat-card-subtitle>הרשמה לגישה לחשבונך</mat-card-subtitle>
+
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>שם משתמש</mat-label>
+        <input matInput formControlName="username" type="text" />
+        <mat-error *ngIf="signUpForm.get('username')?.invalid">
+שם המשתמש חייב להכיל לפחות 3 תווים        </mat-error>
+      </mat-form-field>
+
+      
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>דוא"ל</mat-label>
+        <input matInput formControlName="email" type="email" />
+        <mat-error *ngIf="signUpForm.get('email')?.invalid">
+בבקשה הכנס אימייל תקין        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>סיסמה</mat-label>
+        <input matInput formControlName="password" type="password" />
+        <mat-error *ngIf="signUpForm.get('password')?.invalid">
+הסיסמה חייהת להכיל לפחות 6 תווים        </mat-error>
+      </mat-form-field>
+
+     
+      <button
+        mat-raised-button
+        color="primary"
+        class="full-width sign-up-button"
+        type="submit"
+        [disabled]="signUpForm.invalid"
+      >
+הרשמה      </button>
+
+   
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+    </form>
+  </mat-card>
+</div>

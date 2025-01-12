@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=delete" />
+<div class="garage-table">
+  <table mat-table [dataSource]="garages" class="mat-elevation-z8">
+    <ng-container matColumnDef="shem_mosah">
+      <th mat-header-cell *matHeaderCellDef>שם</th>
+      <td mat-cell *matCellDef="let garage">{{ garage.shem_mosah }}</td>
+    </ng-container>
+    <ng-container matColumnDef="miktzoa">
+      <th mat-header-cell *matHeaderCellDef>מקצוע</th>
+      <td mat-cell *matCellDef="let garage">{{ garage.miktzoa }}</td>
+    </ng-container>
+    <ng-container matColumnDef="yishuv">
+      <th mat-header-cell *matHeaderCellDef>עיר</th>
+      <td mat-cell *matCellDef="let garage">{{ garage.yishuv }}</td>
+    </ng-container>
+    <ng-container matColumnDef="telephone">
+      <th mat-header-cell *matHeaderCellDef>טלפון</th>
+      <td mat-cell *matCellDef="let garage">{{ garage.telephone }}</td>
+    </ng-container>
+  
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef>הסרה</th>
+        <td mat-cell *matCellDef="let garage">
+          <div>
+            <span class="material-symbols-outlined" (click)="onDelete(garage)">
+              delete
+              </span>
+          </div>
+        </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+  </table>
+  
+</div>
+

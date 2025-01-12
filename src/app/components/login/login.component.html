@@ -1,0 +1,41 @@
+<div class="login-container">
+<mat-card class="login-card" >
+  <mat-card-title>ברוכים הבאים</mat-card-title>
+  <mat-card-subtitle>בבקשה התחבר לחשבונך</mat-card-subtitle>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+   
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>דוא"ל</mat-label>
+      <input matInput formControlName="email" type="email" />
+      <mat-error *ngIf="loginForm.get('email')?.invalid">
+בבקשה הקש את כתובת הדוא"ל שלך 
+     </mat-error>
+    </mat-form-field>
+
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>סיסמה</mat-label>
+      <input matInput formControlName="password" type="password" />
+      <mat-error *ngIf="loginForm.get('password')?.invalid">
+הסיסמה חייבת להיות בת 6 תווים לפחות      </mat-error>
+    </mat-form-field>
+
+  
+    <button
+      mat-raised-button
+      color="primary"
+      class="full-width login-button"
+      type="submit"
+      [disabled]="loginForm.invalid"
+    >
+      כניסה
+    </button>
+    <mat-error *ngIf="errorMessage">
+      {{ errorMessage }}
+    </mat-error>
+  </form>
+ 
+  <button mat-button (click)="signUp()" class="sign-up-button">הרשמה</button>
+</mat-card>
+</div>

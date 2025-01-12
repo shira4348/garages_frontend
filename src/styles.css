@@ -1,0 +1,67 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .selection-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .garage-select{
+    flex: 4;
+    
+  }
+.emptygovermrntlist{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
+    text-align: center; 
+    width: 100%;
+}
+  .garage-button
+  {
+    flex: 1;
+    margin: 5px 20px;
+  }
+  
+  .mat-mdc-form-field {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mat-form-field {
+    width: 70%;
+  }
+  
+  button {
+    font-size: 16px;
+  }
+  
+  table {
+    width: 100%;
+    margin-top: 20px;
+    background-color: transparent;
+
+  }
+  .mat-mdc-table{
+    background-color: transparent !important;
+}
+
+  .mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+  }
+  
+  mat-card{
+    margin: 10px;
+  }
+  
